@@ -1,15 +1,15 @@
-let myName = 'Polina Kravets'
+const myName = 'Polina Kravets'
 console.log (myName)
 
-let qaExpYears = 10
+const qaExpYears = 10
 console.log(qaExpYears)
 
-let isManualQa = true
+const isManualQa = true
 console.log(isManualQa)
 
-let isAqa = null
+const isAqa = null
 console.log(isAqa)
 
-let isDev
+const isDev = undefined
 console.log(isDev)
 
