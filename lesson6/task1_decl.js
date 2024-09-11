@@ -1,5 +1,4 @@
 function getArea(width, height){
-    const area = width * height
-    return area
+    return width * height
 }
-console.log(getArea(5,10)) 
+getArea(5,10)
