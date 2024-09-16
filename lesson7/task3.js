@@ -30,9 +30,9 @@ function divide (numerator, denominator)
 
     console.error('Сталася помилка:', error.message)
   }
-    ['finally'] 
+  finally {
         console.log("Робота завершена");
-    
+  }
   ///другий визов з 0
 
   try {
@@ -43,9 +43,9 @@ function divide (numerator, denominator)
 
    console.error('Сталася помилка:', error.message);
  }
-   ['finally']
+ finally {
     console.log("Робота завершена");
-
+ }
  /// третій визов зі стрінгой
  try {
 
@@ -55,6 +55,6 @@ function divide (numerator, denominator)
 
    console.error('Сталася помилка:', error.message);
  }
-   ['finally']
+   finally {
     console.log("Робота завершена");
-
+   }
