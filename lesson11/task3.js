@@ -7,7 +7,7 @@ async function fetchTodo() {
     return todo
     }
     catch (error) {
-        console.error('Error in Promise.race:', error)
+        console.error('Error :', error)
     }
   }
 
@@ -18,7 +18,7 @@ async function fetchTodo() {
     return user
     } 
     catch (error) {
-        console.error('Error in Promise.race:', error)
+        console.error('Error:', error)
     }
   }
  export {fetchTodo, fetchUser}
