@@ -1,0 +1,2 @@
+# Игнорировать каталоги node_modules
+/node_modules
