@@ -2,7 +2,7 @@
 // Створіть новий масив, де кожне значення це елемент вихідного масиву помножений на значення індексу відповідного елемента початкового масиву.
 // Виведіть новий масив на консоль.
 
-const array = [1, 2, 3, 4, 5]
+const array = [1, 2, 3, 4, 5];
 
-const array2 = array.map((number,index)=>number*index)
-console.log(array2)
+const array2 = array.map((number, index) => number * index);
+console.log(array2);

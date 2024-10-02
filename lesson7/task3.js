@@ -7,54 +7,41 @@
 // Огорніть кожен окремий виклик функції divide в try…catch.Використовуючи блок finally, виведіть повідомлення "Робота завершена" в консоль, навіть якщо помилка виникла або не виникла.
 
 //Функція
-function divide (numerator, denominator)
-{
-    if (denominator === 0)
-        {
-            throw new Error('Діленні на 0 неможливе')
-        }
-    if  (typeof numerator != 'number' || typeof denominator != 'number')
-        {
-        throw new Error('Математична операція ділення можлива тільки з числами')
-        }
-    return  numerator / denominator   
-
+function divide(numerator, denominator) {
+  if (denominator === 0) {
+    throw new Error('Діленні на 0 неможливе');
+  }
+  if (typeof numerator != 'number' || typeof denominator != 'number') {
+    throw new Error('Математична операція ділення можлива тільки з числами');
+  }
+  return numerator / denominator;
 }
 
 /// перший визов з валідними данними
- try {
+try {
+  let result = divide(10, 3);
+  console.log(`Результат: ${result}`);
+} catch (error) {
+  console.error('Сталася помилка:', error.message);
+} finally {
+  console.log('Робота завершена');
+}
+///другий визов з 0
 
-     let result = divide(10,3)
-     console.log(`Результат: ${result}`);  
-  } catch (error) {
-
-    console.error('Сталася помилка:', error.message)
-  }
-  finally {
-        console.log("Робота завершена");
-  }
-  ///другий визов з 0
-
-  try {
-
-    let result = divide(10,0)
-    console.log(`Результат: ${result}`);  
- } catch (error) {
-
-   console.error('Сталася помилка:', error.message);
- }
- finally {
-    console.log("Робота завершена");
- }
- /// третій визов зі стрінгой
- try {
-
-    let result = divide(10,'a')
-    console.log(`Результат: ${result}`);  
- } catch (error){
-
-   console.error('Сталася помилка:', error.message);
- }
-   finally {
-    console.log("Робота завершена");
-   }
+try {
+  let result = divide(10, 0);
+  console.log(`Результат: ${result}`);
+} catch (error) {
+  console.error('Сталася помилка:', error.message);
+} finally {
+  console.log('Робота завершена');
+}
+/// третій визов зі стрінгой
+try {
+  let result = divide(10, 'a');
+  console.log(`Результат: ${result}`);
+} catch (error) {
+  console.error('Сталася помилка:', error.message);
+} finally {
+  console.log('Робота завершена');
+}
