@@ -6,9 +6,9 @@
 // Виведіть деструктуризовані змінні в консоль
 
 const book = {
-    title: 'Atlas Shrugged',
-    author: 'Ayn Rand',
-    year: 1957
-}
-const {title, author} = book
-console.log(title,author)
+  title: 'Atlas Shrugged',
+  author: 'Ayn Rand',
+  year: 1957,
+};
+const { title, author } = book;
+console.log(title, author);

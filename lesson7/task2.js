@@ -4,10 +4,10 @@
 // Фунція повинна викликатися, доки num не стане менше або рівне 0.
 // Викличте вашу функцію з аргументом, наприклад, 5, щоб почати рекурсивний лічильник.
 
-function recCounter(num){
-    console.log(num)
-    if (num > 0){
-       return recCounter(num-1)
-    }
+function recCounter(num) {
+  console.log(num);
+  if (num > 0) {
+    return recCounter(num - 1);
+  }
 }
-recCounter(21)
+recCounter(21);

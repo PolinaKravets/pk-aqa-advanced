@@ -3,14 +3,12 @@
 // Якщо age відповідає умові, поверніть true, інакше поверніть false.
 // Викличте вашу функцію з аргументами 25 і 15, і виведіть результат(чи є особа дорослою) в консоль для кожного випадку.
 
-function ageDef (age){
-    if (age >= 18){
-        console.log('Ocoба повнолітня')
-        return
-    }
-        console.log('Особа неповнолітня')
+function ageDef(age) {
+  if (age >= 18) {
+    console.log('Ocoба повнолітня');
+    return;
+  }
+  console.log('Особа неповнолітня');
 }
-ageDef(25)
-ageDef(15)
-
-
+ageDef(25);
+ageDef(15);

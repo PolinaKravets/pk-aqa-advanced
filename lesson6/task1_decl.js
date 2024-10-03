@@ -1,4 +1,4 @@
-function getArea(width, height){
-    return width * height
+function getArea(width, height) {
+  return width * height;
 }
-getArea(5,10)
+getArea(5, 10);

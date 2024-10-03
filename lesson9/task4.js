@@ -7,11 +7,10 @@
 // Виведіть оновлений об'єкт person в консоль.
 
 const person = {
-    firstName: 'Tom',
-    lastName: 'Ford',
-    age: 43
-
-}
-person.email = 'tom.ford@gmail.com'
-delete person.age
-console.log(person)
+  firstName: 'Tom',
+  lastName: 'Ford',
+  age: 43,
+};
+person.email = 'tom.ford@gmail.com';
+delete person.age;
+console.log(person);
