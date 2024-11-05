@@ -1,4 +1,4 @@
-import Object  from '../apiClient/endpoints/objects.js';
+import Object  from '../apiClient/objects.js';
 let objectApi;
 let objectId;
 let createObjectPayload;
@@ -41,15 +41,15 @@ test('GET one Object', async() => {
     const response = await objectApi.getSingleObject(objectId);
     expect(response.status).toBe(200);
     expect(response.data).toBeDefined();
-    expect(response.data.name).toEqual(createObjectPayload.name)
-    expect(response.data.data.year).toEqual(createObjectPayload.data.year)
-    expect(response.data.data.price).toEqual(createObjectPayload.data.price)
+    expect(response.data.name).toEqual(createObjectPayload.name);
+    expect(response.data.data.year).toEqual(createObjectPayload.data.year);
+    expect(response.data.data.price).toEqual(createObjectPayload.data.price);
 });
 
 test('GET invalid object', async()=> {
   const response = await objectApi.getSingleObject('1234567890');
   expect(response.status).toBe(404);
-  expect(response.data.error).toBe('Oject with id=1234567890 was not found.')
+  expect(response.data.error).toBe('Oject with id=1234567890 was not found.');
 
 }
 
@@ -65,7 +65,7 @@ test('Update Object', async() => {
        'Hard disk size': '2 TB'
     }
   };
-  const response = await objectApi.updateObject(objectId,updateObjectPayload)  
+  const response = await objectApi.updateObject(objectId,updateObjectPayload);  
   expect(response.status).toEqual(200);
   expect(response.data.id).toBeDefined();
   expect(response.data.name).toEqual(updateObjectPayload.name);
@@ -85,9 +85,9 @@ test('Update invalid Object', async() => {
     }
   };
   
-  const response = await objectApi.updateObject('1234567890', updateObjectPayload)  
+  const response = await objectApi.updateObject('1234567890', updateObjectPayload);  
   expect(response.status).toEqual(404);
-  expect(response.data.error).toEqual('The Object with id = 1234567890 doesn\'t exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PUT request after that.')
+  expect(response.data.error).toEqual('The Object with id = 1234567890 doesn\'t exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PUT request after that.');
 });
 
 test('Partially update Object', async() => {
@@ -107,13 +107,13 @@ test('Partially update invalid Object', async() => {
 });
 
 test('DELETE Object', async() => {
-    const response = await objectApi.deleteObject(objectId)
+    const response = await objectApi.deleteObject(objectId);
     expect(response.status).toBe(200);
     expect(response.data.message).toContain(`Object with id = ${objectId} has been deleted`);
   });
   
 test('DELETE invalid Object', async() => {
-    const response = await objectApi.deleteObject('1234567890')   
+    const response = await objectApi.deleteObject('1234567890');   
     expect(response.status).toBe(404);
     expect(response.data.error).toContain(`Object with id = 1234567890 doesn't exist.`);
   });
