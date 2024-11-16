@@ -10,7 +10,7 @@ describe('Login', () => {
   beforeEach(() => {
 
     authData.navigateToMainPageWithAuth();
-    basePageLog.SignInButton().click();
+    basePageLog.signInButton().click();
     
   });
 

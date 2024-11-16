@@ -3,69 +3,69 @@ class BasePageRegister {
       return cy.get("a.btn.header-link");
     }
   
-    SignUpButton() {
+    signUpButton() {
       return cy.get("button[class='hero-descriptor_btn btn btn-primary']");
     }
-    SignUpPopup() {
+    signUpPopup() {
         return cy.get("div[class='modal-content']");
       
     }
-    SignUpMainTitle(){
+    signUpMainTitle(){
       return cy.get('.modal-title');
     }
-    SignUpClose(){
+    signUpClose(){
         return cy.get("button[class='close']");
 
     }
-    SignUpRegisterButton(){
+    signUpRegisterButton(){
       return cy.get("button[class='btn btn-primary']");
 
   }
-    SignUpNameTitle(){
+    signUpNameTitle(){
       return cy.get("input[id ='signupName']").prev();
     }
-    SignUpLastNameTitle(){
+    signUpLastNameTitle(){
       return cy.get("input[id ='signupLastName']").prev();
     }
-    SignUpEmailTitle(){
+    signUpEmailTitle(){
       return cy.get("input[id ='signupEmail']").prev();
   }
-  SignUpPasswordTitle(){
+  signUpPasswordTitle(){
     return cy.get("input[id ='signupPassword']").prev();
   }
-   SignUpRepPasswordTitle(){
+   signUpRepPasswordTitle(){
   return cy.get("input[id ='signupRepeatPassword']").prev();
    }
-    SignUpNameField(){
+    signUpNameField(){
       return cy.get("input[id ='signupName']");
     }
-    SignUpLastNameField(){
+    signUpLastNameField(){
       return cy.get("input[id ='signupLastName']");
     }
-    SignUpEmailField(){
+    signUpEmailField(){
       return cy.get("input[id ='signupEmail']");
   }
-  SignUpPasswordField(){
+  signUpPasswordField(){
     return cy.get("input[id ='signupPassword']");
   }
- SignUpRepPasswordField(){
+ signUpRepPasswordField(){
   return cy.get("input[id ='signupRepeatPassword']");
  }
-SignUpNameValidation(){
+signUpNameValidation(){
   return cy.get('.form-group input[formcontrolname="name"] + .invalid-feedback p');
 }
-SignUpLastNameValidation(){
+signUpLastNameValidation(){
    return cy.get('.form-group input[formcontrolname="lastName"] + .invalid-feedback p');
 }
 
-SignUpEmailValidation(){
+signUpEmailValidation(){
   return cy.get('.form-group input[formcontrolname="email"] + .invalid-feedback p');
 }
 
-SignUpPasswordValidation(){
+signUpPasswordValidation(){
   return cy.get('.form-group input[formcontrolname="password"] + .invalid-feedback p');
 }
-SignUpRepPasswordValidation(){
+signUpRepPasswordValidation(){
   return cy.get('.form-group input[formcontrolname="repeatPassword"] + .invalid-feedback p');
 }
 }
