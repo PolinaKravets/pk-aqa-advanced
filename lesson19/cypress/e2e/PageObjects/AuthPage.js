@@ -3,9 +3,12 @@ class AuthData {
         username: "guest",
         password: "welcome2qauto",
     };
+    get url() {
+        return Cypress.env('baseUrl');
+    }
 
     navigateToMainPageWithAuth(credentials = this.defaultCredentials) {
-        cy.visit('https://qauto.forstudy.space/', { auth: credentials});
+        cy.visit(this.url, { auth: credentials});
     };
 
 }
