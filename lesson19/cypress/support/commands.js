@@ -44,36 +44,36 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
   const garagePage = new GaragePage();
   const fuelPage = new FuelExpPage();
 
-  Cypress.Commands.add('addcar', (brand, model, miliage) => {
+  Cypress.Commands.add('addCar', (brand, model, miliage) => {
 
     
-  garagePage.addCarButton().click();
-  garagePage.addCarBrandField().select(brand);
-  garagePage.addModelField().select(model);
-  garagePage.addMiliageField().focus().type(miliage);
-  garagePage.addCarAdd().click();
+  garagePage.addCarButton.click();
+  garagePage.addCarBrandField.select(brand);
+  garagePage.addModelField.select(model);
+  garagePage.addMiliageField.focus().type(miliage);
+  garagePage.addCarAdd.click();
   cy.wait(500);
 
   
   });
 
-  Cypress.Commands.add('deletecar', () => {
+  Cypress.Commands.add('deleteAllCars', () => {
 
     
-    garagePage.addCarEdit().each(($btn) => {
+    garagePage.addCarEdit.each(($btn) => {
         cy.wrap($btn).click();
-        garagePage.addCarDelete().click();
-        garagePage.addCarConfirmDelete().click();
+        garagePage.addCarDelete.click();
+        garagePage.addCarConfirmDelete.click();
       });
   
     });
 
-    Cypress.Commands.add('deletefuel', () => {
+    Cypress.Commands.add('deleteFuel', () => {
 
     
-            fuelPage.addFuelDelete().each(($btn) => {
+            fuelPage.addFuelDelete.each(($btn) => {
             cy.wrap($btn).click({ force: true });
-            fuelPage.addFuelConfirmDelete().click({ force: true });
+            fuelPage.addFuelConfirmDelete.click({ force: true });
     
         });
     });

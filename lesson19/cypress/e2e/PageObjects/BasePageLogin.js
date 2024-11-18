@@ -1,27 +1,27 @@
 class BasePageLogin {
     
-    signInButton() {
+    get signInButton() {
       return cy.get("button.btn.btn-outline-white.header_signin");
     }
     
-      signInEmailField() {
+      get signInEmailField() {
         return cy.get('input[formcontrolname="email"]');
       }
     
-      signInPasswordField() {
+      get signInPasswordField() {
         return cy.get('input[formcontrolname="password"]');
       }
     
-      signInloginButton() {
+      get signInloginButton() {
         return cy.get('button[class="btn btn-primary"]');
       }
       
       login(email, password) {
         
         
-        this.signInEmailField().type(email);
-        this.signInPasswordField().type(password, { sensitive: true });
-        this.signInloginButton().click();
+        this.signInEmailField.type(email);
+        this.signInPasswordField.type(password, { sensitive: true });
+        this.signInloginButton.click();
         
       }
     }

@@ -1,70 +1,70 @@
 class GaragePage {
 
-    navigateToGaragePage(){
+    get navigateToGaragePage(){
         return cy.get('a[routerlink="garage"]');
        }
     
-    addCarButton() {
+       get addCarButton() {
       return cy.get('.panel-page_heading .btn-primary');
     }
     
-    addCarPopupMainTitle(){
+    get addCarPopupMainTitle(){
         return cy.get('.modal-title');
 
       }
 
-      addCarPopup() {
+      get addCarPopup() {
         return cy.get("div[class='modal-content']");
       
     }
     
-      addCarBrandTitle() {
+    get addCarBrandTitle() {
         return cy.get("select[id='addCarBrand']").prev();
       }
     
-      addCarBrandField() {
+      get addCarBrandField() {
         return cy.get("select[id='addCarBrand']");
       }
-      addModelTitle() {
+      get addModelTitle() {
         return cy.get("select[id='addCarModel']").prev();
       }
     
-      addModelField() {
+      get addModelField() {
         return cy.get("select[id='addCarModel']");
       }
-      addMiliageTitle() {
+      get addMiliageTitle() {
         return cy.get("div[class='input-group']").prev();
       }
     
-      addMiliageField() {
+      get addMiliageField() {
         return cy.get("input[id='addCarMileage']");
       }
 
-      addCarClose(){
+      get addCarClose(){
         return cy.get("button[class='close']");
 
     }
-    addCarAdd(){
+    get addCarAdd(){
         return cy.get('.modal-footer .btn-primary');
 
     }
-    addCarCancel(){
+    get addCarCancel(){
         return cy.get('.modal-footer .btn-secondary');
 
     }
     
-     addCarEdit(){
+    get addCarEdit(){
         return cy.get('span[class="icon icon-edit"]');
      }
-     addCarDelete(){
+     get addCarDelete(){
         return cy.get('button.btn.btn-outline-danger');
      }
     
-    addCarConfirmDelete(){
+     get addCarConfirmDelete(){
         return cy.get('button.btn.btn-danger');
     }
 
-    addCarCheckCar(){
+    get addCarCheckCar(){
         return cy.get('ul.car-list > li.car-item:first-of-type .car_name');
     }
 }

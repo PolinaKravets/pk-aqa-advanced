@@ -1,78 +1,78 @@
 class FuelExpPage {
 
-   navigateToFuelExp(){
+    get navigateToFuelExp(){
     return cy.get('a[routerlink="expenses"]');
    }
     
-    addFuelButton() {
+   get addFuelButton() {
       return cy.get('.panel-page_heading .btn-primary');
     }
     
-    addFuelPopupMainTitle(){
+    get addFuelPopupMainTitle(){
         return cy.get('.modal-title');
 
       }
 
-      addFuelPopup() {
+      get addFuelPopup() {
         return cy.get("div[class='modal-content']");
       
     }
     
-      addFuelCarTitle() {
+    get addFuelCarTitle() {
         return cy.get("select[id='addExpenseCar']").prev();
       }
     
-      addFuelCarField() {
+      get addFuelCarField() {
         return cy.get("select[id='addExpenseCar']");
       }
-      addFuelDataTitle() {
+      get addFuelDataTitle() {
         return cy.get("label[for='addExpenseDate']");
       }
     
-      addFuelDataField() {
+      get addFuelDataField() {
         return cy.get("select[id='addExpenseDate']");
       }
-      addExpMiliageTitle() {
+      get addExpMiliageTitle() {
         return cy.get("label[for='addExpenseMileage']");
       }
     
-      addExpMiliageField() {
+      get addExpMiliageField() {
         return cy.get("input[id='addExpenseMileage']");
       }
 
-      addFuelLitresTitle() {
+      get addFuelLitresTitle() {
         return cy.get("label[for='addExpenseLiters']");
       }
-      addFuelLitresField() {
+      get addFuelLitresField() {
         return cy.get("input[id='addExpenseLiters']");
       }
 
-      addFuelCostTitle() {
+      get addFuelCostTitle() {
         return cy.get("label[for='addExpenseTotalCost']");
       }
-      addFuelCostField() {
+      get addFuelCostField() {
         return cy.get("input[id='addExpenseTotalCost']");
       }
 
-      addFuelClose(){
+      get addFuelClose(){
         return cy.get("button[class='close']");
 
     }
-    addFuelAdd(){
+    get addFuelAdd(){
         return cy.get('.modal-footer .btn-primary');
 
     }
-    addFuelCancel(){
+    get addFuelCancel(){
         return cy.get('.modal-footer .btn-secondary');
 
     }
     
-     addFuelDelete(){
+    get addFuelDelete(){
         return cy.get('button.btn.btn-delete');
      }
     
     
-    addFuelConfirmDelete(){
+     get addFuelConfirmDelete(){
         return cy.get('button.btn.btn-danger');
     }
 }
