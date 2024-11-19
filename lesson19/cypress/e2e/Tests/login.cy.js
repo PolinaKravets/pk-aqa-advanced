@@ -10,12 +10,12 @@ describe('Login', () => {
   beforeEach(() => {
 
     authData.navigateToMainPageWithAuth();
-    basePageLog.signInButton().click();
+    basePageLog.signInButton.click();
     
   });
 
     it('Succsessful login', () => {
-      
+    
   const email = Cypress.env('email');
   const password = Cypress.env('password');
   basePageLog.login(email, password);

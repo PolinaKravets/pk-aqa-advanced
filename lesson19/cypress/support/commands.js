@@ -38,3 +38,42 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
   
     return originalFn(element, text, options);
   });
+
+  import GaragePage from '../e2e/PageObjects/GaragePage';
+  import FuelExpPage from '../e2e/PageObjects/FuelExpPage';
+  const garagePage = new GaragePage();
+  const fuelPage = new FuelExpPage();
+
+  Cypress.Commands.add('addCar', (brand, model, miliage) => {
+
+    
+  garagePage.addCarButton.click();
+  garagePage.addCarBrandField.select(brand);
+  garagePage.addModelField.select(model);
+  garagePage.addMiliageField.focus().type(miliage);
+  garagePage.addCarAdd.click();
+  cy.wait(500);
+
+  
+  });
+
+  Cypress.Commands.add('deleteAllCars', () => {
+
+    
+    garagePage.addCarEdit.each(($btn) => {
+        cy.wrap($btn).click();
+        garagePage.addCarDelete.click();
+        garagePage.addCarConfirmDelete.click();
+      });
+  
+    });
+
+    Cypress.Commands.add('deleteFuel', () => {
+
+    
+            fuelPage.addFuelDelete.each(($btn) => {
+            cy.wrap($btn).click({ force: true });
+            fuelPage.addFuelConfirmDelete.click({ force: true });
+    
+        });
+    });
