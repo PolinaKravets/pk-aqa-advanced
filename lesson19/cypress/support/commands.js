@@ -41,8 +41,11 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
 
   import GaragePage from '../e2e/PageObjects/GaragePage';
   import FuelExpPage from '../e2e/PageObjects/FuelExpPage';
+  import dayjs from 'dayjs';
+  
   const garagePage = new GaragePage();
   const fuelPage = new FuelExpPage();
+  
 
   Cypress.Commands.add('addCar', (brand, model, miliage) => {
 
@@ -63,6 +66,7 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
     garagePage.addCarEdit.each(($btn) => {
         cy.wrap($btn).click();
         garagePage.addCarDelete.click();
+        cy.wait(1000);
         garagePage.addCarConfirmDelete.click();
       });
   
@@ -76,4 +80,24 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
             fuelPage.addFuelConfirmDelete.click({ force: true });
     
         });
+    });
+
+    Cypress.Commands.add('addFuelApi', (carId, miliage, litres, cost) =>{
+        const currentDate = dayjs().format('YYYY-MM-DD');
+        cy.request({
+            method: 'POST',
+            url: '/api/expenses',
+            failOnStatusCode: false,
+            responseTimeout: 30000,
+            body: {
+                 "carId": carId, 
+                 "reportedAt": currentDate,
+                  "mileage": miliage,
+                  "liters": litres,
+                  "totalCost": cost,
+                  "forceMileage": false
+                 },
+
+     });
+
     });
