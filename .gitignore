@@ -1,2 +1,3 @@
-# Игнорировать каталоги node_modules
-/node_modules
+node_modules
+jest-html-reportes-attach
+jest_html_reportes.html
