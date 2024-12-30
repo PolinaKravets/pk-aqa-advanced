@@ -25,14 +25,6 @@ describe('Add fuel expence tests', () => {
  
     });
 
-    after(() => {
-        
-    ///удаление всех машин в конце теста
-         garagePage.navigateToGaragePage.click();
-         cy.deleteAllCars();
-
-        
-    });
 
   it('Open and validate add fuel form', () => {
     //проверка попапа добавления машины
