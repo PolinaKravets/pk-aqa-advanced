@@ -26,8 +26,6 @@ describe('Add fuel expence tests', () => {
     });
 
     after(() => {
-        //удаление всех єкспенсов в конце теста
-          cy.deleteFuel();
         
     ///удаление всех машин в конце теста
          garagePage.navigateToGaragePage.click();
