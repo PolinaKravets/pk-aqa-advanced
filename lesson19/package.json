@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open:test": "cypress open --env configFile=test",
     "cypress:open:stab": "cypress open --env configFile=stab",
-    "cypress:run": "cypress run",
+    "cypress:run": "cypress run --env configFile=stab --browser chrome",
     "cypress:run:mocha:stab": "cypress run --env configFile=stab  --reporter mochawesome  --browser chrome",
     "cypress:run:mocha:test": "cypress run --env configFile=test  --reporter mochawesome  --browser chrome",
     "lint": "eslint",
