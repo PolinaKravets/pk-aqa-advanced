@@ -1,0 +1,37 @@
+name: CI Testing
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    types: ['opened']
+jobs:
+  lint-cypress:
+    name: 'Lint Cypress tests folder'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install dependecies
+        working-directory: ./lesson-19
+        run: npm ci
+      - name: Run lint
+        working-directory: ./lesson-19
+        run: npm run lint
+  test-cypress:
+    name: 'Cypress  tests all'
+    needs: lint-cypress
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:latest
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependecies
+        working-directory: ./lesson-19
+        run: npm ci
+      - name: Run Cypress  tests all
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          working-directory: ./lesson-19
