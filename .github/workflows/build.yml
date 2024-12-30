@@ -7,7 +7,7 @@ on:
     types: ['opened']
 jobs:
   lint-cypress:
-    name: 'Lint Cypress tests folder'
+    name: 'Lint  tests'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
