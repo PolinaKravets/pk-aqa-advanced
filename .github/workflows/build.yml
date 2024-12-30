@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - name: Install dependecies
-        working-directory: ./lesson-19
+        working-directory: ./lesson19
         run: npm ci
       - name: Run lint
-        working-directory: ./lesson-19
+        working-directory: ./lesson19
         run: npm run lint
   test-cypress:
     name: 'Cypress  tests all'
@@ -28,10 +28,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install dependecies
-        working-directory: ./lesson-19
+        working-directory: ./lesson19
         run: npm ci
       - name: Run Cypress  tests all
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          working-directory: ./lesson-19
+          working-directory: ./lesson19
